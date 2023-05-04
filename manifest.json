@@ -1,0 +1,77 @@
+{
+  "manifest_version": 2,
+  "name": "clippy",
+  "version": "0.0.1",
+  "icons": {
+    "16":  "favicon-16.png",
+    "32":  "favicon-32.png",
+    "48":  "favicon-48.png",
+    "128": "favicon-128.png"
+  },
+
+  "description": "The O.G. thing nobody wanted but got anyway.",
+  "homepage_url": "https://en.wikipedia.org/wiki/Office_Assistant",
+  "short_name": "clippy",
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+
+  "__dev__content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "__prod__content_security_policy": "script-src 'self'; object-src 'self'",
+
+
+  "__chrome|firefox__author": "clippy",
+  "__opera__developer": {
+    "name": "clippy"
+  },
+
+  "__firefox__applications": {
+    "gecko": {
+      "id": "{754FB1AD-CC3B-4856-B6A0-7786F8CAC117}"
+    }
+  },
+
+  "__chrome__minimum_chrome_version": "49",
+  "__opera__minimum_opera_version": "36",
+
+  "//browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "favicon-16.png",
+      "32":  "favicon-32.png",
+      "48":  "favicon-48.png",
+      "128": "favicon-128.png"
+    },
+    "default_title": "clippy",
+    "__chrome|opera__chrome_style": false,
+    "__firefox__browser_style": false
+  },
+
+  "//__chrome|opera__options_page": "options.html",
+  "//options_ui": {
+    "page": "options.html",
+    "open_in_tab": true,
+    "__chrome__chrome_style": false
+  },
+
+  "//background": {
+    "scripts": [
+      "background.js"
+    ],
+    "__chrome|opera__persistent": false
+  },
+
+  "content_scripts": [{
+    "matches": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "js": [
+      "content.js"
+    ]
+  }]
+}
