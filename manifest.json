@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "clippy",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "icons": {
     "16":  "favicon-16.png",
     "32":  "favicon-32.png",
@@ -9,9 +9,9 @@
     "128": "favicon-128.png"
   },
 
-  "description": "The O.G. thing nobody wanted but got anyway.",
+  "description": "Put on the special glasses, and see the O.G. assistant nobody wanted but got anyway.",
   "homepage_url": "https://en.wikipedia.org/wiki/Office_Assistant",
-  "short_name": "clippy",
+  "short_name": "they clippy",
 
   "permissions": [
     "activeTab",
@@ -24,9 +24,9 @@
   "__prod__content_security_policy": "script-src 'self'; object-src 'self'",
 
 
-  "__chrome|firefox__author": "clippy",
+  "__chrome|firefox__author": "Frank Armitage jr.",
   "__opera__developer": {
-    "name": "clippy"
+    "name": "Frank Armitage jr."
   },
 
   "__firefox__applications": {
