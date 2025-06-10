@@ -307,7 +307,7 @@ function addClippy(body){
 	img.style.position = 'fixed';
 	img.style.right = '0';
 	img.style.bottom = '0';
-	img.style.fontSize = '4.5em'; // TODO: make this more resolution independent
+	img.style.fontSize = '3.5em'; // TODO: make this more resolution independent
 	img.style.visibility = 'hidden';
 	body.appendChild(img);
 }
