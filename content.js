@@ -78,8 +78,10 @@ const data = {
 		[ /\b(claude ai|claude)\b/gi, 'dollar-store Borg' ],
 		[ /\b(gemini|bard)\b/gi, 'Google-Surveillance' ], //this is though, because there's also a klepto scam called gemini. maybe we need an LLM to infer context?
 		[ /\bgrok\b/gi, 'trans-man grok, formely Tay' ],
+		[ /\bsiri\b/gi, 'Siri-v0.1' ], // must be before other siri jokes
 		[ /\bapple intelligence\b/gi, 'Siri-v0.2' ],
-		[ /\bsiri\b/gi, 'Siri-v0.1' ],
+		[ /\bvisual intelligence\b/gi, 'apple reverse image-search' ],
+		[ /\bApple games\b/gi, 'iBigfoot' ],
 		[ /\bcopilot\b/gi, 'Windows12 notepad' ],
 		[ /\bdeepseek\b/gi, 'made-in-china plagiarizer' ],
 		[ /\b(large language model|llm)(s)?\b/gi, 'parrot$2 as a service' ],
