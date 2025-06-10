@@ -44,6 +44,12 @@ let firstLang = '';
  */
 const data = {
 	'en': [
+		//[ /\bxxx\b/gi, 'xxx' ],
+
+		[ /\bGoogle Assistant\b/gi, 'Evil Assistant' ],
+		[ /\bAlexa\b/gi, 'Amazon Snitch' ],
+		[ /\b(ai|a\.i\.) Assistant\b/gi, 'Clippy' ],
+
 		[ /\b(BTC|Bit[- ]?coin)(s)?\b/gi, 'laundered drug money' ], // can we say that in a way that spell BTC? TODO:
 		[ /\bblock[- ]?chain(s)?\b/gi, 'unoptimized public data-base$1' ],
 		[ /\bstable[- ]?coin(s)?\b/gi, 'fiat-pegged-token$1' ],
@@ -56,7 +62,9 @@ const data = {
 		[ /\b(the )?crypto space\b/gi, 'money laundering' ],
 		[ /\b(Crypto and AI|crypto|ai) Czar\b/gi, 'hocuspocus misdirection clow' ],
 		[ /\bweb3(\.0)?\b/gi, 'fading investment scam' ],
+
 		[ /\b(ai|a\.i\.) boom\b/gi, 'latest investment scam' ],
+		[ /\b(ai|a\.i\.) art\b/gi, 'AI art (heh)' ],
 		[ /\bgenerative (ai|a\.i\.|artificial intelligence) tools\b/gi, 'dopamine adiction enablers' ],
 		[ /\bgenerative (ai|a\.i\.|artificial intelligence)\b/gi, 'Just one more prompt syndrome' ],
 		[ /\bgenerative model(s)?\b/gi, 'wasteful bruteforce algorithm$1' ],
@@ -69,17 +77,34 @@ const data = {
 		[ /\b(chat[- ]?gpt|gpt)\b/gi, 'plagiarizer' ],
 		[ /\b(claude ai|claude)\b/gi, 'dollar-store Borg' ],
 		[ /\b(gemini|bard)\b/gi, 'Google-Surveillance' ], //this is though, because there's also a klepto scam called gemini. maybe we need an LLM to infer context?
-		[ /\b(grok)\b/gi, 'trans-man Tay' ],
-		[ /\b(apple intelligence)\b/gi, 'Siri v0.2' ],
-		[ /\b(copilot)\b/gi, 'Windows12 notepad' ],
+		[ /\bgrok\b/gi, 'trans-man grok, formely Tay' ],
+		[ /\bapple intelligence\b/gi, 'Siri-v0.2' ],
+		[ /\bsiri\b/gi, 'Siri-v0.1' ],
+		[ /\bcopilot\b/gi, 'Windows12 notepad' ],
+		[ /\bdeepseek\b/gi, 'made-in-china plagiarizer' ],
 		[ /\b(large language model|llm)(s)?\b/gi, 'parrot$2 as a service' ],
 		[ /\b(Generative pre[- ]?trained transformer)(s)?\b/gi, 'most resource-wasteful bidirectional encoder representation$2 from transformer$2' ],
-		[ /\b(dall-e|whisper|midjourney)\b/gi, 'Paintshop Pro Plugins' ],
+		[ /\b(dall·e|dall-e|whisper|midjourney)\b/gi, 'Paintshop Pro Plugins' ],
 		[ /\b(stable[- ]?diffusion)\b/gi, 'Pretrained-paintbrush.exe' ],
 		[ /\b(sora)\b/gi, 'Youtube on Acid' ],
 		[ /\b(ai|a\.i\.) token(s)?\b/gi, 'Slop Ration$2' ],
 		[ /\b(ai|a\.i\.) generated?\b/gi, 'Slop' ],
 		// vibe code. I think this is already dumb and depreciating enough.
+
+		[ /\btesla fsd\b/gi, 'remote controlled killdozer' ],
+		[ /\bbuilder ?ai\b/gi, 'Actually Indians' ],
+		[ /\bmeta ai\b/gi, 'metabook' ],
+		[ /\bwhatsapp\b/gi, 'whatsbook' ],
+		[ /\binstagram\b/gi, 'instabook' ],
+		[ /\bgoogle\b/gi, 'evil-G' ],
+		[ /\bopenai\b/gi, 'OpenPalmsAI' ],
+		[ /\bpalantir\b/gi, 'globalist-CIA' ],
+		[ /\bIn-Q-Tel\b/gi, 'emblezzement of taxpayer money' ],
+		[ /\bpost[- ]9[-\/\.]11\b/gi, 'full on fascism' ],
+		[ /\b(twitter|twitter.com|x\.com)\b/gi, 'xitter' ],
+
+		[ /\bbill gates\b/gi, 'William Henry Gates III' ],
+
 	],
 }
 
@@ -258,7 +283,7 @@ if (supportedLangs.includes(htmlLang) === true) {
 
 		addClippy(document.body);
 		setTimeout(function () {
-			log(didChange ? 'get clipped!' : 'no clippy for you!');
+			log(didChange ? 'get clippy-ed!' : 'no clippy for you!');
 			if( didChange ) showClippy();
 		}, replaceWaitTime);
 
@@ -280,7 +305,7 @@ function addClippy(body){
 	img.style.position = 'fixed';
 	img.style.right = '0';
 	img.style.bottom = '0';
-	img.style.fontSize = '13vh'; // make this more resolution independent
+	img.style.fontSize = '4.5em'; // TODO: make this more resolution independent
 	img.style.visibility = 'hidden';
 	body.appendChild(img);
 }
