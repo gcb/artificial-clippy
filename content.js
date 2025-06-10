@@ -64,21 +64,21 @@ const data = {
 		[ /\bArtificial super[- ]?intelligence(s)?\b/gi, 'Artificial superincompetence$1' ], // TODO: spell AGI
 		[ /\bartificial intelligence(s)?\b/gi, 'Artificial Incompetence$1' ],
 		[ /\bprompt[- ]engineering\b/gi, 'semi-literate person' ],
-		[ /\bGPT-(3|3.5|4|4o|4.1|4.1 mini|o3|o4-mini|2.5|2)\b/, 'Freemium Web-search Summarizer-$1' ],
+		[ /\bGPT-(3|3.5|4|4o|4.1|4.1 mini|o3|o4-mini|2.5|2)\b/gi, 'Freemium Web-search Summarizer-$1' ],
 		[ /\bchatbot(s)?\b/gi, 'ELIZA$1' ],
 		[ /\b(chat[- ]?gpt|gpt)\b/gi, 'plagiarizer' ],
 		[ /\b(claude ai|claude)\b/gi, 'dollar-store Borg' ],
 		[ /\b(gemini|bard)\b/gi, 'Google-Surveillance' ], //this is though, because there's also a klepto scam called gemini. maybe we need an LLM to infer context?
 		[ /\b(grok)\b/gi, 'trans-man Tay' ],
-		[ /\b(apple intelligence)\b/, 'Siri v0.2' ],
+		[ /\b(apple intelligence)\b/gi, 'Siri v0.2' ],
 		[ /\b(copilot)\b/gi, 'Windows12 notepad' ],
 		[ /\b(large language model|llm)(s)?\b/gi, 'parrot$2 as a service' ],
 		[ /\b(Generative pre[- ]?trained transformer)(s)?\b/gi, 'most resource-wasteful bidirectional encoder representation$2 from transformer$2' ],
-		[ /\b(dall-e|whisper|midjourney)\b/, 'Paintshop Pro Plugins' ],
-		[ /\b(stable[- ]?diffusion)\b/, 'Pretrained-paintbrush.exe' ],
-		[ /\b(sora)\b/, 'Youtube on Acid' ],
-		[ /\b(ai|a\.i\.) token(s)?\b/, 'Slop Ration$2' ],
-		[ /\b(ai|a\.i\.) generated?\b/, 'Slop' ],
+		[ /\b(dall-e|whisper|midjourney)\b/gi, 'Paintshop Pro Plugins' ],
+		[ /\b(stable[- ]?diffusion)\b/gi, 'Pretrained-paintbrush.exe' ],
+		[ /\b(sora)\b/gi, 'Youtube on Acid' ],
+		[ /\b(ai|a\.i\.) token(s)?\b/gi, 'Slop Ration$2' ],
+		[ /\b(ai|a\.i\.) generated?\b/gi, 'Slop' ],
 		// vibe code. I think this is already dumb and depreciating enough.
 	],
 }
