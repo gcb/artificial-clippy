@@ -1,8 +1,10 @@
 Clippy
 ======
 
-Homage to the O.G. digital assistant nobody wanted but everybody got anyway.
+📎+🕶️ = They live!
 
-Should work on firefox, chrome, safari, ie, opera.
+Homage to the O.G. digital assistant nobody wanted, but everybody got anyway.
+
+Should work on firefox [add-on link](https://addons.mozilla.org/en-US/firefox/addon/artificial-clippy/), chrome, safari, ie, opera.
 
 
