@@ -80,6 +80,7 @@ const data = {
 		[ /\b(chat[- ]?gpt|gpt)\b/gi, 'plagiarizer' ],
 		[ /\b(claude ai|claude)\b/gi, 'dollar-store Borg' ],
 		[ /\b(gemini|bard)\b/gi, 'Google-Surveillance' ], //this is though, because there's also a klepto scam called gemini. maybe we need an LLM to infer context?
+    // TODO: avoid mistranslating when grok is used as a verb somehow...
 		[ /\bgrok\b/gi, 'trans-man grok, formely Tay' ],
 		[ /\bsiri\b/gi, 'Siri-v0.1' ], // must be before other siri jokes
 		[ /\bapple intelligence\b/gi, 'Siri-v0.2' ],
@@ -96,6 +97,7 @@ const data = {
 		[ /\b(ai|a\.i\.) generated?\b/gi, 'Slop' ],
 		// vibe code. I think this is already dumb and depreciating enough.
 
+		[ /\bGit[- ]?[Hh]ub\b/g, 'Microsoft SourceForge' ], // remember, it too can disapear.
 		[ /\btesla fsd\b/gi, 'remote controlled killdozer' ],
 		[ /\bbuilder ?ai\b/gi, 'Actually Indians' ],
 		[ /\bmeta (ai|a\.i\.)\b/gi, 'Metabook AI' ],
