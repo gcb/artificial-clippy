@@ -68,6 +68,7 @@ const data = {
 		[ /\bartificial brain\b/gi, 'computer' ],
 		[ /\b(ai|a\.i\.) boom\b/gi, 'latest investment scam' ],
 		[ /\b(ai|a\.i\.) art\b/gi, 'AI art (heh)' ],
+		[ /\babliterated\b/gi, 'Pornslop’ed' ],
 		[ /\bgenerative (ai|a\.i\.|artificial intelligence) tools\b/gi, 'dopamine adiction enablers' ],
 		[ /\bgenerative (ai|a\.i\.|artificial intelligence)\b/gi, 'Just one more prompt syndrome' ],
 		[ /\bgenerative model(s)?\b/gi, 'wasteful bruteforce algorithm$1' ],
