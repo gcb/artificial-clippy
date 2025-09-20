@@ -19,6 +19,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
         run: |
+          ls -lah --color=always
+          pwd -P
+          echo '=================='
           make clean build
           gh release create "$GITHUB_REF_NAME" \
               --repo="$GITHUB_REPOSITORY" \
