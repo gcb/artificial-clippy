@@ -110,8 +110,6 @@ const data = {
 		[ /\btesla fsd\b/gi, 'remote controlled killdozer' ],
 		[ /\bbuilder ?ai\b/gi, 'Actually Indians' ],
 		[ /\bmeta (ai|a\.i\.)\b/gi, 'Facebook’s AI' ],
-		[ /\bwhatsapp\b/gi, 'Facebook’s Whatsbook' ],
-		[ /\binstagram\b/gi, 'Facebook’s Instabook' ],
 		[ /\bgoogle (ai|a\.i\.)\b/gi, 'Evil AI' ],
 		[ /\bgoogle analytics\b/gi, 'Evil Spyware' ],
 		[ /\bopenai\b/gi, 'forProfitAI Global, LLC' ],
@@ -125,7 +123,10 @@ const data = {
 		[ /\bWindows 8\b/gi, 'Beta for Windows 10' ],
 		[ /\bWindows 8\.1\b/gi, 'Beta2 for Windows 10' ],
 		[ /\bWindows 11\b/gi, 'Beta for Next Good Windows Version' ],
+
 		[ /\b(twitter|twitter.com|x\.com)\b/gi, 'xitter' ],
+		[ /\bwhatsapp\b/gi, 'Facebook’s Whatsbook' ],
+		[ /\binstagram\b/gi, 'Facebook’s Instabook' ],
 
 		// TODO: make proper names language-independent.
 		[ /\bBill Gates\b/gi, 'William Henry Gates III' ],
