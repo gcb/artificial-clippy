@@ -1,4 +1,5 @@
 // project licensed AGPL-3.0 or newer.
+// vim: noai:noet:ts=4:sw=4
 
 function log(msg){
 	console.info('📎💬', msg);
@@ -8,12 +9,13 @@ log('loading');
 // perf throttling code mostly from https://raw.githubusercontent.com/qua3k/B-tch-to-Boss
 // which is MPL-2.0 originally.
 
-const CLIPPY_ID = 'widget-3f7a1e0c-8dea-4e96-912d-1ef07a9a9c2b'; // vibe coded. prompt: generate the most unique html id.
+const CLIPPY_ID = 'widget-3f7a1e0c-8dea-4e96-912d-1ef07a9a9c2b'; // vibe coded. prompt: generate the most unique html id. ..it probably is not unique.
 
 // throttling global variables
 const replaceWaitTime = 115; // ms
 
 // language configuration
+// TODO: only en is implemented. if you want to help add others, just go ahead!
 let useLang = 'en';
 let supportedLangs = ['en']; //, 'pt', 'fr', 'it'];
 const htmlLang = document.documentElement.lang
@@ -63,11 +65,13 @@ const data = {
 		[ /\b(Crypto and AI|crypto|ai) Czar\b/gi, 'hocuspocus misdirection clow' ],
 		[ /\bworld[- ]?blockchain\b/gi, 'Retinal-scan-police-state™ database' ],
 		[ /\b(world[- ]?coin|WLD)\b/gi, 'Retinal-scan-police-state™' ],
+		[ /\b(ai|a\.i\.|tools) for humanity\b/gi, 'Tools Against Humanity' ],
 		[ /\bweb3(\.0)?\b/gi, 'fading investment scam' ],
 
 		[ /\bartificial brain\b/gi, 'computer' ],
 		[ /\b(ai|a\.i\.) boom\b/gi, 'latest investment scam' ],
 		[ /\b(ai|a\.i\.) art\b/gi, 'AI art (heh)' ],
+		[ /\b(ai|a\.i\.) agent\b/gi, 'Cloud AutoComplete' ],
 		[ /\babliterated\b/gi, 'Pornslop’ed' ],
 		[ /\bgenerative (ai|a\.i\.|artificial intelligence) tools\b/gi, 'dopamine adiction enablers' ],
 		[ /\bgenerative (ai|a\.i\.|artificial intelligence)\b/gi, 'Just one more prompt syndrome' ],
@@ -75,13 +79,15 @@ const data = {
 		[ /\bArtificial general intelligence\b/gi, 'shut-ins pipe-dream' ], // TODO: spell AGI
 		[ /\bArtificial super[- ]?intelligence(s)?\b/gi, 'Artificial superincompetence$1' ], // TODO: spell AGI
 		[ /\bartificial intelligence(s)?\b/gi, 'Artificial Incompetence$1' ],
-		[ /\bprompt[- ]engineering\b/gi, 'semi-literate person' ],
+		[ /\bprompt[- ]engineer(ing)?\b/gi, 'semi-literate person' ],
 		[ /\bGPT-(3|3.5|4|4o|4.1|4.1 mini|o3|o4-mini|2.5|2)\b/gi, 'Freemium Web-search Summarizer-$1' ],
+		// NOTE: i cannot keep up with the churn... maybe i need to add AI here:
+		[ /\b(Project Astra|Auto-GPT|Superagent|Do Anything Machine|AgentGPT|BabyAGI|Agent API|Devin|Aomni|ChemCrow|MetaGPT|Cognosys)\b/gi, 'Clippy Reseller' ],
 		[ /\bchatbot(s)?\b/gi, 'ELIZA$1' ],
 		[ /\b(chat[- ]?gpt|gpt)\b/gi, 'plagiarizer' ],
 		[ /\b(claude ai|claude)\b/gi, 'dollar-store Borg' ],
 		[ /\b(gemini|bard)\b/gi, 'Google-Surveillance' ], //this is though, because there's also a klepto scam called gemini. maybe we need an LLM to infer context?
-    // TODO: avoid mistranslating when grok is used as a verb somehow...
+	    // TODO: avoid mistranslating when grok is used as a verb somehow... freaking lazy CEOS stealing scifi terms
 		[ /\bgrok\b/gi, 'trans-man grok, formely Tay' ],
 		[ /\bsiri\b/gi, 'Siri-v0.1' ], // must be before other siri jokes
 		[ /\bapple intelligence\b/gi, 'Siri-v0.2' ],
@@ -96,14 +102,16 @@ const data = {
 		[ /\b(sora)\b/gi, 'Youtube on Acid' ],
 		[ /\b(ai|a\.i\.) token(s)?\b/gi, 'Slop Ration$2' ],
 		[ /\b(ai|a\.i\.) generated?\b/gi, 'Slop' ],
-		// vibe code. I think this is already dumb and depreciating enough.
+		// vibe code. I think this is already dumb and depreciating enough. no need to reaplace.
 
-		[ /\bGit[- ]?[Hh]ub\b/g, 'Microsoft SourceForge' ], // remember, it too can disapear.
+		[ /\bGit[- ]?[Hh]ub\b/g, 'Microsoft SourceForge' ],
+		[ /\bHugging Face\b/g, 'Virtual-BFF🤗 turned VC-backed free cloud storage' ],
+		[ /\btesla full[- ]self[- ]driving\b/gi, 'tesla fsd' ],
 		[ /\btesla fsd\b/gi, 'remote controlled killdozer' ],
 		[ /\bbuilder ?ai\b/gi, 'Actually Indians' ],
-		[ /\bmeta (ai|a\.i\.)\b/gi, 'Metabook AI' ],
-		[ /\bwhatsapp\b/gi, 'Whatsbook' ],
-		[ /\binstagram\b/gi, 'Instabook' ],
+		[ /\bmeta (ai|a\.i\.)\b/gi, 'Facebook’s AI' ],
+		[ /\bwhatsapp\b/gi, 'Facebook’s Whatsbook' ],
+		[ /\binstagram\b/gi, 'Facebook’s Instabook' ],
 		[ /\bgoogle (ai|a\.i\.)\b/gi, 'Evil AI' ],
 		[ /\bgoogle analytics\b/gi, 'Evil Spyware' ],
 		[ /\bopenai\b/gi, 'forProfitAI Global, LLC' ],
@@ -119,8 +127,17 @@ const data = {
 		[ /\bWindows 11\b/gi, 'Beta for Next Good Windows Version' ],
 		[ /\b(twitter|twitter.com|x\.com)\b/gi, 'xitter' ],
 
-		[ /\bbill gates\b/gi, 'William Henry Gates III' ],
+		// TODO: make proper names language-independent.
+		[ /\bBill Gates\b/gi, 'William Henry Gates III' ],
+		[ /\bSam Altman\b/gi, 'Samuel Harris Gibstine Altman' ],
+		[ /\b(Elon )?Musk\b/gi, 'South African born Canadian-American Elon Reeve Musk' ],
+		[ /\bEric Schmidt\b/gi, 'Eric Google-Evil-Now Schmidt' ],
 
+		//[ /\bJavaScript\b/gi, 'unTyped Script' ],
+	],
+	'pt': [
+		[ /\b(ai|a\.i\.) generativa\b/gi, 'Gerador de Lero-Lero' ],
+		[ /\b(ai|a\.i\.)\b/gi, 'Lero-Lero' ],
 	],
 }
 
@@ -323,6 +340,7 @@ function addClippy(body){
 	img.style.bottom = '0';
 	img.style.fontSize = '3.5em'; // TODO: make this more resolution independent
 	img.style.visibility = 'hidden';
+	img.style.opacity= '0.6';
 	body.appendChild(img);
 }
 // TODO: use a clippy transparent gif. need to check licenses and all that.
