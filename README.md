@@ -1,11 +1,15 @@
+[![Get it for Firefox!](https://extensionworkshop.com/assets/img/documentation/publish/get-the-addon-178x60px.dad84b42.png)](https://addons.mozilla.org/en-US/firefox/addon/artificial-clippy/?utm_medium=git&utm_content=download-button)
+
 Clippy
 ======
 
 📎+🕶️ = They live!
 
-Homage to the O.G. digital assistant nobody wanted, but everybody got anyway.
+Homage to the O.G. digital assistant (which nobody wanted, but everybody got anyway.)
 
-Should work on firefox [add-on link](https://addons.mozilla.org/en-US/firefox/addon/artificial-clippy/), chrome, safari, ie, opera.
+Should work on [firefox (add-on link)](https://addons.mozilla.org/en-US/firefox/addon/artificial-clippy/), chrome, safari, ie, opera. (if you care about those other browsers, send a Pull request for the build)
+
+![Clippy with sunglasses seeing the real world OBEY OBEY OBEY](clippy-banner.png?raw=true)
 
 Usage
 -----
